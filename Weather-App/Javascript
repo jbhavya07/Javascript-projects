@@ -1,0 +1,60 @@
+const inputBox = document.querySelector(".input-box");
+const searchBtn= document.getElementById("search-button")
+const weatherImg= document.querySelector(".weather-img");
+const temperature= document.querySelector(".temperature")
+const description= document.querySelector(".description");
+const humidity = document.getElementById("humidity");
+const windSpeed = document.getElementById("wind-speed");
+const locationNotFound=document.querySelector(".location-not-found");
+const weatherBody=document.querySelector(".weather-box");
+
+//Fetching the Weather-API
+async function checkWeather(city){
+    const apiKey = "ddbb4f4c144cff45d82c37de8cb8f3b1";
+    const url= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+    const weatherData=await fetch(`${url}`).then(response=> response.json());
+    console.log(weatherData);
+    if(weatherData.cod === '404'){
+        locationNotFound.style.display='flex';
+        weatherBody.style.display="none";
+        return;
+    }
+    console.log(weatherData)
+    weatherBody.style.display='flex';
+    locationNotFound.style.display='none';
+    temperature.innerHTML=`${Math.round(weatherData.main.temp-273.15)}°C`;
+    description.innerHTML=`${weatherData.weather[0].description}`;
+    humidity.innerHTML=`${weatherData.main.humidity}%`
+    windSpeed.innerHTML=`${weatherData.wind.speed}Km/hr`;
+    console.log('start');
+
+    let imgChange=weatherData.weather[0].main;
+    
+    
+    
+    //Switching the images according to the details given by the API
+    switch(imgChange){
+        case 'Clouds':
+            weatherImg.src = "weather appa\cloud.png";
+            break;
+        case 'Clear':
+            weatherImg.src = "weather appa\clear.png";
+            break;
+        case 'Rain':
+            weatherImg.src = "weather appa\rain.png";
+            break;
+        case 'Mist':
+            weatherImg.src = "weather appa\mist.png";
+            break;
+        case 'Snow':
+            weatherImg.src = "weather appa\snow.png";
+            break;
+    }
+    console.log('end');
+}
+
+//Adding event-listener to the search button
+searchBtn.addEventListener('click', ()=>{
+    checkWeather(inputBox.value);
+});
