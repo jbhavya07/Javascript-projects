@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Recipe Maker</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Recipe Maker</h1>
+            <form >
+                <input type="text"  placeholder="Search your Recipes" class="searchbox">
+                <button type="submit" class="search-btn">Search</button>
+            </form> 
+            <p class="theme-btn"><i class="fa-solid fa-sun"></i>
+            </p>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="recipe-container">
+                <h2>Search your favourite Recipes</h2>
+            </div>
+            <div class="recipe-detail">
+                <button type="button " class="recipe-close-button">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="recipe-details-content"></div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="https://kit.fontawesome.com/aef6ba5eb9.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
