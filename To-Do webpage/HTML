@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dark-mode">
+            <i class="fa-solid fa-moon"></i>
+        </div>
+    <div class="container">
+        <div class="heading">
+            <h1>My To-Do List</h1>
+        </div>
+        <div class="writing-container">
+            <input type="text" placeholder="Add a New Task to your To-Do" class="input-field">
+            <button type="submit" class="add-btn">Add</button>
+        </div>
+
+        <ul class="todolist">
+            <!-- <li>Task1</li>
+            <li>Task2</li>
+            <li>Task3</li> -->
+        </ul>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/aef6ba5eb9.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
